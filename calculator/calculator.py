@@ -1,0 +1,47 @@
+from Tkinter import *
+import math
+root=Tk()
+root.title("Calculator")
+frame=Frame(root)
+frame.grid()
+a=Entry(frame,fg="black",bg="white")
+b=Button(frame,fg="blue",bg="red")
+a.grid(row=1,column=0)
+b.grid(row=1,column=1)
+k=Button(frame,text="Eval",fg="blue",bg="red")
+k.grid(row=2,column=0)
+j=Button(frame,text="Cos",fg="red",bg="blue")
+j.grid(row=2,column=1)
+m=Button(frame,text="sin",fg="black",bg="green")
+m.grid(row=3,column=0)
+t=Button(frame,text="Tan",fg="black",bg="white")
+t.grid(row=3,column=1)
+z=Button(frame,text="SQRT",fg="green",bg="pink")
+z.grid(row=4,column=1)
+w=Button(frame,text="LOG",fg="pink",bg="red")
+w.grid(row=4,column=0)
+def sample():
+	k=eval(a.get())
+	b.configure(text=str(k))
+k.configure(text="Eval",command=sample)
+def cos():
+	k=math.cos(eval(a.get()))
+	b.configure(text=str(k))
+j.configure(text="cos",command=cos)
+def sin():
+	k=math.sin(eval(a.get()))
+	b.configure(text=str(k))
+m.configure(text="sin",command=sin)
+def tan():
+	k=math.tan(eval(a.get()))
+	b.configure(text=str(k))
+t.configure(command=tan)
+def sqrt():
+	k=math.sqrt(eval(a.get()))
+	b.configure(text=str(k))
+z.configure(command=sqrt)
+def log():
+	k=math.log(eval(a.get()))
+	b.configure(text=str(k))
+w.configure(command=log)
+root.mainloop()
